@@ -1,42 +1,106 @@
+/* General styling */
+body {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+
+  /* Flexbox centering */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 2rem;
+}
+
+/* Centered login container with responsive max-width */
+.login-container {
+  width: 100%;
+  max-width: 400px; /* Maximum width for larger screens */
+  padding: 2rem;
+  border-radius: 10px;
+  background-color: #2b2f3a;
+  box-shadow: 0 0px 60px rgba(50, 205, 220, 0.15);
+  margin: 1rem; /* Margin for spacing on mobile */
+}
+
+/* Header styling */
+.login-container h2 {
+  color: #32cddc;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Standardize input and button sizing */
+.login-container input,
+.login-container button {
+  width: 100%;
+  box-sizing: border-box;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Input fields styling */
+.login-container input {
+  padding: 0.75rem;
+  margin: 0.75rem 0;
+  border-radius: 5px;
+  border: 1px solid #505c6d;
+  background-color: #3c414e;
+  color: #e0e0e0;
+}
+
+.login-container input:focus {
+  border-color: #32cddc;
+  outline: none;
+}
+
+/* Button styling */
+.login-container button {
+  padding: 0.75rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #32cddc;
+  color: #1e1e1e;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.1s;
+}
+
+.login-container button:hover {
+  background-color: #2aabb4;
+  transform: scale(1.02);
+}
+
+.login-container button:active {
+  transform: scale(0.98);
+}
+
+/* Responsive font size and padding adjustments */
+@media (max-width: 768px) {
+  .login-container {
+    padding: 1.5rem;
   }
-  to {
-    transform: rotate(360deg);
+  .login-container h2 {
+    font-size: 1.3rem;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+@media (max-width: 480px) {
+  .login-container {
+    padding: 1rem;
   }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+  .login-container h2 {
+    font-size: 1.2rem;
+  }
+  .login-container input,
+  .login-container button {
+    padding: 0.5rem;
+  }
 }
