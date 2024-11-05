@@ -11,7 +11,7 @@ body {
 }
 
 #root {
-  width: 100%;
+  width: 95%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -26,6 +26,7 @@ body {
   background-color: #2b2f3a;
   box-shadow: 0 0px 60px rgba(50, 205, 220, 0.15);
   margin: 1rem; 
+  text-align: center;
 }
 
 .login-container h2 {
@@ -68,11 +69,14 @@ body {
 
 .login-container button:hover {
   background-color: #2aabb4;
-  transform: scale(1.02);
+  transform: scale(1.05);
 }
 
-.login-container button:active {
-  transform: scale(0.98);
+.logout-container {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  margin-top: 20px;
 }
 
 @media (max-width: 768px) {

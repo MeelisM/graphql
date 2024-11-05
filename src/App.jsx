@@ -1,22 +1,42 @@
-// src/App.jsx
-import { useState } from 'react';
-import Login from './Login'; 
-import Dashboard from './Dashboard'; 
+// App.jsx
+import { useState, useEffect } from 'react';
+import Login from './Login';
+import Dashboard from './Dashboard';
 import './App.css';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
+  useEffect(() => {
+    const token = localStorage.getItem('jwt');
+    if (token) {
+      setIsLoggedIn(true);
+    }
+  }, []);
+
   const handleLogin = () => {
     setIsLoggedIn(true);
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem('jwt');
+    localStorage.removeItem('login');
+    setIsLoggedIn(false);
+  };
+
   return (
-    <div id="root">
+    <div>
       {isLoggedIn ? (
-        <Dashboard /> 
+        <div className="dashboard-container">
+          <Dashboard />
+          <div className="logout-container">
+            <button onClick={handleLogout} className="logout-button">
+              Logout
+            </button>
+          </div>
+        </div>
       ) : (
-        <Login onLogin={handleLogin} /> 
+        <Login onLogin={handleLogin} />
       )}
     </div>
   );
