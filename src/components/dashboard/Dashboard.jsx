@@ -1,9 +1,9 @@
 // src/Dashboard.jsx
 import React, { useState, useEffect } from 'react';
-import ApiService from './services/api';
-import AuditPieChart from './components/AuditPieChart';
-import ProjectsPieChart from './components/ProjectsPieChart';
-import XPProgressionChart from './components/XPProgressionChart';
+import ApiService from '../../services/api';
+import AuditPieChart from '../AuditPieChart';
+import ProjectsPieChart from '../ProjectsPieChart';
+import XPProgressionChart from '../XPProgressionChart';
 import './Dashboard.css';
 
 function Dashboard() {

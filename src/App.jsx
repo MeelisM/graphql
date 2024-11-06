@@ -1,7 +1,7 @@
 // App.jsx
 import { useState, useEffect } from 'react';
-import Login from './Login';
-import Dashboard from './Dashboard';
+import Login from './components/Login';
+import Dashboard from './components/dashboard/Dashboard';
 import './App.css';
 
 function App() {
